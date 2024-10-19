@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout pageTitle="Links">
+  <ul class="links">
+    <li>
+      <a href="https://github.com/aynurkarimov">GitHub</a>
+    </li>
+
+    <li>
+      <a href="mailto:hey@aynurkarimov.com">Email me</a>
+    </li>
+  </ul>
+</BaseLayout>
+
+<style lang="scss">
+  .links {
+    list-style: square;
+    list-style-position: inside;
+
+    li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .error {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

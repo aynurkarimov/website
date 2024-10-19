@@ -1,0 +1,48 @@
+---
+import "@fontsource/public-sans";
+
+import "../styles/theme.scss";
+import "../styles/global.scss";
+import SiteHeader from "../components/SiteHeader/SiteHeader.astro";
+
+interface Props {
+  pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="author" content="Aynur Karimov" />
+    <meta name="keywords" content="software, blog" />
+    <title>{pageTitle}</title>
+  </head>
+
+  <body>
+    <div class="base">
+      <SiteHeader />
+
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<style lang="scss">
+  .base {
+    margin: 0 auto;
+    padding: 14vh 30px;
+    height: auto;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+</style>

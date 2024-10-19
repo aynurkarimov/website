@@ -1,0 +1,46 @@
+---
+const { pathname } = Astro.url;
+---
+
+<header>
+  <h1>Aynur Karimov</h1>
+
+  <nav>
+    <ul>
+      <li class:list={[{ "active-path": pathname === "/" }]}>
+        <a href="/">home</a>
+      </li>
+
+      <li class:list={[{ "active-path": pathname.startsWith("/blog") }]}>
+        <a href="/blog">blog</a>
+      </li>
+
+      <li class:list={[{ "active-path": pathname.startsWith("/links") }]}>
+        <a href="/links">links</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  h1 {
+    font-size: 22px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+  }
+
+  ul {
+    display: flex;
+    margin-top: 8px;
+    gap: 16px;
+  }
+
+  .active-path {
+    text-decoration: underline;
+    text-decoration-color: var(--link);
+  }
+</style>

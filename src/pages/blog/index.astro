@@ -1,0 +1,20 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogEntry from "../../components/BlogEntry";
+
+const blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
+---
+
+<BaseLayout pageTitle="Blog">
+  <div>
+    <h3>2025</h3>
+    {blogEntries.map((post) => <BlogEntry post={post} />)}
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  h3 {
+    margin-bottom: 4px;
+  }
+</style>

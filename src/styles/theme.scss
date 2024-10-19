@@ -1,0 +1,22 @@
+$background: rgb(244, 244, 241);
+$background-dark: rgb(21, 21, 21);
+
+$font: rgb(31, 29, 29);
+$font-dark: rgb(238, 238, 238);
+
+$link: rgb(80, 147, 194);
+$link-dark: rgb(82, 127, 140);
+
+:root {
+  --background: #{$background};
+  --font: #{$font};
+  --link: #{$link};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #{$background-dark};
+    --font: #{$font-dark};
+    --link: #{$link-dark};
+  }
+}

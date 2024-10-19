@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDateToHuman } from "../../helpers/date";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const {
+  post: {
+    slug,
+    data: { title, date },
+  },
+} = Astro.props;
+---
+
+<section>
+  <time datetime={date}>{formatDateToHuman(date)}</time>
+  <a href={"/blog/" + slug}>{title}</a>
+</section>
+
+<style lang="scss">
+  section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  time {
+    font-size: 14px;
+  }
+</style>
